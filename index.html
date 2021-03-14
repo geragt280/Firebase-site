@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./style.css" type="text/css"/> <!--checks relationship-->  
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<title>Finesse</title> 
+</head> 
+<body class="grey lighten-3">
+
+	 <!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <img src="img/Screen Shot 2020-10-08 at 12.58.38 PM 2.svg" style="width: 70px; margin-top: 10px;">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="logged-in">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Favourites</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="grey-text" id="logout">Logout</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+      </ul>
+    </div>
+  </nav> 
+
+  
+
+ 
+ <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div> 
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Favourites</h4><br/>
+      <div class="account-details"></div>
+    </div>
+  </div>  
+
+
+  <!-- GUIDE LIST -->
+  <div class="container" style="margin-top: 40px;">      
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+    </ul> 
+  </div>
+  
+ 
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyD7nwmyuc6kGz1EOmrheShM-fvo4qkXNuA",
+    authDomain: "learning---following-yt-vid.firebaseapp.com",
+    databaseURL: "https://learning---following-yt-vid.firebaseio.com",
+    projectId: "learning---following-yt-vid", 
+    appId: "1:220875287252:web:804aac302b42bd32b9e941",
+    measurementId: "G-60H7T4MYVC"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics(); 
+
+  //make auth and firestore reference 
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  //update firestore settings 
+  // db.settings({timestampsInSnapshots: true}); 
+
+</script>	 
+ 
+<!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script src="scripts/auth.js"></script>
+ <script src="scripts/index.js"></script>  
+
+
+ <!-- //Anitmated Slideshow -->
+  <div class="slideshow-container">  
+    <i class="fas fa-arrow-circle-right" id="nextBtn"></i> 
+    <i class="fas fa-arrow-circle-left" id="prevBtn"></i>
+    <div class="slideshow-slide">  
+<!--Making a copy of first and last slide--> 
+      <img src="./img/rsz_helping_hands.jpg" id="lastClone" alt="">  
+      <img src="./img/rsz_college_ucc.jpg" alt="">
+      <img src="./img/rsz_cas.png" alt="">
+      <img src="./img/rsz_helping_hands.jpg" alt="">
+      <img src="./img/rsz_college_ucc.jpg" id="firstClone" alt="">  
+    </div>
+  </div>   
+
+  <script src="app.js"></script> 
+
+  <!-- 
+  <h1><small>Welcome</small></h1>
+  <p>
+  <a href="page2.html" target="_self">Link to page 2</a>
+  </p>
+  -->  
+
+
+</body>
+</html> 
+
+
