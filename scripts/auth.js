@@ -26,6 +26,7 @@ signupForm.addEventListener('submit', (e) => {
     //get user info 
     const email =  signupForm['signup-email'].value;
     const password = signupForm['signup-password'].value; 
+    const admin = signupForm['signup-admin'].value; 
 
     // console.log(email, password); For checking if the users who signup get saved in the console 
 
