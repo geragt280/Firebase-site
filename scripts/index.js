@@ -1,7 +1,10 @@
 //DOM elements
 const guideList =  document.querySelector('.guides'); 
 const LoggedOutLinks = document.querySelectorAll('.logged-out')
-const LoggedInLinks = document.querySelectorAll('.logged-in') 
+const LoggedInLinks = document.querySelectorAll('.logged-in')  
+const AdminGroup = new Set(["3pzeFktiklac4l43F87Hq0OF1sS2"])  
+
+
 
 
 //setup the guides 
@@ -14,6 +17,12 @@ const setupUI = (user) =>  {
     else {  
       LoggedInLinks.forEach(item => item.style.display = 'none');      
       LoggedOutLinks.forEach(item => item.style.display = 'block');
+    } 
+    if (AdminGroup.has(user.uid)) { 
+      document.getElementById("IsAdmin").style.display = 'block';
+    } 
+    else { 
+      document.getElementById("IsAdmin").style.display = 'none'; 
     }
 }
 

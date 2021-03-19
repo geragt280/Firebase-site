@@ -19,16 +19,19 @@
         <img src="img/Screen Shot 2020-10-08 at 12.58.38 PM 2.svg" style="width: 70px; margin-top: 10px;">
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="logged-in">
+          <li class="logged-in" style= "display:none;" >
             <a href="#" class="grey-text modal-trigger" data-target="modal-account">Favourites</a>
           </li>
-          <li class="logged-in">
+          <li class="logged-in" style= "display:none;" >
             <a href="#" class="grey-text" id="logout">Logout</a>
-          </li>
-          <li class="logged-out">
+          </li> 
+          <li class="logged-in" style="display: none;">
+            <a href="#" class="grey-text modal-trigger" id="IsAdmin" data-target="modal-create">Create Message</a> 
+          </li> 
+          <li class="logged-out" style= "display:none;" >
             <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
           </li>
-          <li class="logged-out">
+          <li class="logged-out" style= "display:none;" >
             <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
           </li>
       </ul>
@@ -36,8 +39,6 @@
   </nav> 
 
   
-
- 
  <!-- SIGN UP MODAL -->
   <div id="modal-signup" class="modal">
     <div class="modal-content">
@@ -76,23 +77,55 @@
         <button class="btn yellow darken-2 z-depth-0">Login</button>
       </form>
     </div>
-  </div>
+  </div>  
 
-  <!-- ACCOUNT MODAL -->
-  <div id="modal-account" class="modal">
+
+
+  <!-- FAVOURITE MODAL -->
+  <div id="modal-favourite" class="modal">
     <div class="modal-content center-align">
-      <h4>Favourites</h4><br/>
+      <h4>Favourites</h4><br/> 
       <div class="account-details"></div>
     </div>
   </div>  
 
+  <!-- CREATE Message MODAL -->
+  <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <h4>Create Message</h4><br />
+      <form id="create-form">
+        <div class="input-field">
+          <input type="text" id="title" required>
+          <label for="title">Message Name</label>
+        </div>
+        <div class="input-field">
+          <textarea id="content" class="materialize-textarea" required></textarea>
+          <label for="content">Message Content</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- //Anitmated Slideshow -->
+  <div class="slideshow-container">  
+    <i class="fas fa-arrow-circle-right" id="nextBtn"></i> 
+    <i class="fas fa-arrow-circle-left" id="prevBtn"></i>
+    <div class="slideshow-slide">  
+<!--Making a copy of first and last slide--> 
+      <img src="./img/rsz_helping_hands.jpg" id="lastClone" alt="">  
+      <img src="./img/rsz_college_ucc.jpg" alt="">
+      <img src="./img/rsz_cas.png" alt="">
+      <img src="./img/rsz_helping_hands.jpg" alt="">
+      <img src="./img/rsz_college_ucc.jpg" id="firstClone" alt="">  
+    </div>
+  </div>   
 
   <!-- GUIDE LIST -->
   <div class="container" style="margin-top: 40px;">      
     <ul class="collapsible z-depth-0 guides" style="border: none;">
     </ul> 
   </div>
-  
  
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -105,7 +138,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
 
 <script>
-  // Your web app's Firebase configuration
+  // My web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
     apiKey: "AIzaSyD7nwmyuc6kGz1EOmrheShM-fvo4qkXNuA",
@@ -134,19 +167,7 @@
  <script src="scripts/index.js"></script>  
 
 
- <!-- //Anitmated Slideshow -->
-  <div class="slideshow-container">  
-    <i class="fas fa-arrow-circle-right" id="nextBtn"></i> 
-    <i class="fas fa-arrow-circle-left" id="prevBtn"></i>
-    <div class="slideshow-slide">  
-<!--Making a copy of first and last slide--> 
-      <img src="./img/rsz_helping_hands.jpg" id="lastClone" alt="">  
-      <img src="./img/rsz_college_ucc.jpg" alt="">
-      <img src="./img/rsz_cas.png" alt="">
-      <img src="./img/rsz_helping_hands.jpg" alt="">
-      <img src="./img/rsz_college_ucc.jpg" id="firstClone" alt="">  
-    </div>
-  </div>   
+ 
 
   <script src="app.js"></script> 
 

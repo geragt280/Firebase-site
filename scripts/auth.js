@@ -6,8 +6,8 @@ cuser = null
 //listen for auth status changes  
 auth.onAuthStateChanged(user => { 
     if (user) { 
-        db.collection('guides').get().then(snapshot => {  // goes and gets a handle on the guides collection  s
-            cuser = user
+        db.collection('guides').onSnapshot(snapshot => {  // goes and gets a handle on the guides collection, onSnapshot allows for immediate updating 
+            cuser = user 
             setupGuides(snapshot.docs); 
             setupUI(user); 
         }) 
@@ -17,6 +17,23 @@ auth.onAuthStateChanged(user => {
     }
 }); 
 
+// Add new message  
+const CreateForm = document.querySelector('#create-form'); 
+CreateForm.addEventListener('submit',  (e) => { 
+    e.preventDefault(); 
+
+    db.collection('guides').add({
+        title: CreateForm['title'].value, 
+        content: CreateForm['content'].value,
+    }).then(() => { 
+    //closes modal and resets the form
+    const modal =  document.querySelector('#modal-create') 
+        M.Modal.getInstance(modal).close(); 
+        createForm.reset(); 
+    }).catch(err => {       //Catches error , in a callback function way 
+        console.log(err.message)
+    })
+})
 
 //signup 
 const signupForm = document.querySelector('#signup-form');
@@ -31,7 +48,8 @@ signupForm.addEventListener('submit', (e) => {
     // console.log(email, password); For checking if the users who signup get saved in the console 
 
     //sign up the user  
-    auth.createUserWithEmailAndPassword(email, password).then(cred => { 
+    auth.createUserWithEmailAndPassword(email, password).then(cred => {  
+        // close signup modal and close form
         const modal =  document.querySelector('#modal-signup') 
         M.Modal.getInstance(modal).close(); 
         signupForm.reset();
