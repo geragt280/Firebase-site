@@ -4,7 +4,16 @@ const slideshowImages = document.querySelectorAll('.slideshow-slide img'); //Do 
 //Butons 
 const prevBtn = document.querySelector('#prevBtn'); 
 const nextBtn = document.querySelector('#nextBtn');  
-const favBtn = document.querySelector ('')
+const favBtn = document.querySelector ('#favBtn'); 
+
+//Favourite Button Listener  
+favBtn.addEventListener('click', () => { 
+    
+
+
+})
+
+
 
 //counter to let us know where we are 
 let counter = 1; 
