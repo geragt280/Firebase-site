@@ -6,6 +6,7 @@ cuser = null
 //listen for auth status changes  
 auth.onAuthStateChanged(user => { 
     if (user) { 
+        //db.collection('.messages').orderBy("", "asc");
         db.collection('.messages').onSnapshot(snapshot => {  // goes and gets a handle on the guides collection, onSnapshot allows for immediate updating 
             cuser = user 
             setupGuides(snapshot.docs); 
@@ -25,7 +26,7 @@ CreateForm.addEventListener('submit',  (e) => {
     db.collection('.messages').add({
         title: CreateForm['title'].value, 
         content: CreateForm['content'].value,
-        //content: CreateForm['link'].link,
+        link: CreateForm['link'].value,
 
     }).then(() => { 
     //closes modal and resets the form

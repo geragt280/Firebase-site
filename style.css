@@ -37,5 +37,18 @@
     font-size: 30px;
     color: grey;
     cursor: pointer; 
+}  
+
+.card {  
+    width: 300px;  
+    height: 200px;
 } 
 
+#card-collection {   
+    border-style: double;
+    display: flex; 
+    justify-content: space-around; 
+    gap: 5px; 
+    flex-wrap: wrap;
+    width: 100%;
+}
