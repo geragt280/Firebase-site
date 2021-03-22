@@ -7,9 +7,7 @@ const nextBtn = document.querySelector('#nextBtn');
 const favBtn = document.querySelector ('#favBtn'); 
 
 //Favourite Button Listener  
-favBtn.addEventListener('click', () => { 
-    
-
+favBtn.addEventListener('click', () => {
 
 })
 
