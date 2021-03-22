@@ -6,7 +6,7 @@ cuser = null
 //listen for auth status changes  
 auth.onAuthStateChanged(user => { 
     if (user) { 
-        db.collection('guides').onSnapshot(snapshot => {  // goes and gets a handle on the guides collection, onSnapshot allows for immediate updating 
+        db.collection('.messages').onSnapshot(snapshot => {  // goes and gets a handle on the guides collection, onSnapshot allows for immediate updating 
             cuser = user 
             setupGuides(snapshot.docs); 
             setupUI(user); 
@@ -22,14 +22,16 @@ const CreateForm = document.querySelector('#create-form');
 CreateForm.addEventListener('submit',  (e) => { 
     e.preventDefault(); 
 
-    db.collection('guides').add({
+    db.collection('.messages').add({
         title: CreateForm['title'].value, 
         content: CreateForm['content'].value,
+        //content: CreateForm['link'].link,
+
     }).then(() => { 
     //closes modal and resets the form
     const modal =  document.querySelector('#modal-create') 
         M.Modal.getInstance(modal).close(); 
-        createForm.reset(); 
+        CreateForm.reset(); 
     }).catch(err => {       //Catches error , in a callback function way 
         console.log(err.message)
     })
@@ -42,8 +44,8 @@ signupForm.addEventListener('submit', (e) => {
 
     //get user info 
     const email =  signupForm['signup-email'].value;
-    const password = signupForm['signup-password'].value; 
-    const admin = signupForm['signup-admin'].value; 
+    const password = signupForm['signup-password'].value;  
+    //const admin = signupForm['signup-admin'].value; 
 
     // console.log(email, password); For checking if the users who signup get saved in the console 
 

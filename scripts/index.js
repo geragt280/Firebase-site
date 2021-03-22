@@ -7,7 +7,7 @@ const AdminGroup = new Set(["3pzeFktiklac4l43F87Hq0OF1sS2"])
 
 
 
-//setup the guides 
+//setup the Navbar UI 
 const setupUI = (user) =>  { 
     if (user) { 
         // toggle UI elements 
@@ -27,7 +27,6 @@ const setupUI = (user) =>  {
 }
 
 const setupGuides = (data) => {
-
   if (data.length) { // making sure someone is logged in by chechiking if the array is empty or not  
     // using Firestore to retrive data on the Guidelist
     let html = '';
@@ -43,7 +42,7 @@ const setupGuides = (data) => {
     });
     guideList.innerHTML = html;
   } else {
-    guideList.innerHTML = '<h6 class="center-align"> login ya bum </h6>';
+    guideList.innerHTML = '<h6 class="center-align"> Login or Register to Continue </h6>';
   }
 }
 

@@ -8,9 +8,26 @@
   <link rel="stylesheet" href="./style.css" type="text/css"/> <!--checks relationship-->  
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
   integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-	<title>Finesse</title> 
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+   <!-- Compiled and minified Bootsrap 
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> --> 
+  
+   <title>Finesse</title>  
+  
+
 </head> 
 <body class="grey lighten-3">
+
+  <!-- 
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+   -->
 
 	 <!-- NAVBAR -->
   <nav class="z-depth-0 grey lighten-4">
@@ -52,10 +69,11 @@
           <input type="password" id="signup-password" required />
           <label for="signup-password">Choose password</label>
         </div>
+        <!--
         <div class="input-field"> 
           <input type="checkbox" if="signup-admin"/> 
           <label for="signup-admin">Select if an admin</label>
-        </div>
+        </div>--> 
         <button class="btn yellow darken-2 z-depth-0">Sign up</button>
       </form>
     </div>
@@ -89,18 +107,23 @@
     </div>
   </div>  
 
-  <!-- CREATE Message MODAL -->
+  <!-- CREATE Message MODAL  -->
   <div id="modal-create" class="modal">
     <div class="modal-content">
-      <h4>Create Message</h4><br />
+      <h4>Create Message</h4><br/>
       <form id="create-form">
+        </div>
         <div class="input-field">
           <input type="text" id="title" required>
           <label for="title">Message Name</label>
         </div>
-        <div class="input-field">
-          <textarea id="content" class="materialize-textarea" required></textarea>
+        <div class="input-field"> 
+            <textarea id="content" rows="6" cols="50" input type="text" class="materialize-textarea" required style="height: 500px;" ></textarea> 
           <label for="content">Message Content</label>
+        </div> 
+        <div class="input-field"> 
+          <input type="url" textarea id="link" required>  
+          <label for="link">Link</label>  
         </div>
         <button class="btn yellow darken-2 z-depth-0">Create</button>
       </form>
@@ -112,7 +135,8 @@
     <i class="fas fa-arrow-circle-right" id="nextBtn"></i> 
     <i class="fas fa-arrow-circle-left" id="prevBtn"></i>
     <div class="slideshow-slide">  
-<!--Making a copy of first and last slide--> 
+
+      <!--Making a copy of first and last slide--> 
       <img src="./img/rsz_helping_hands.jpg" id="lastClone" alt="">  
       <img src="./img/rsz_college_ucc.jpg" alt="">
       <img src="./img/rsz_cas.png" alt="">
@@ -125,7 +149,22 @@
   <div class="container" style="margin-top: 40px;">      
     <ul class="collapsible z-depth-0 guides" style="border: none;">
     </ul> 
-  </div>
+  </div> 
+ 
+       <h5><u>Service Opportunities </u></h5>
+
+       <div class="card">
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+      </div>
+
  
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -135,7 +174,7 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
 
 <script>
   // My web app's Firebase configuration
