@@ -3,8 +3,9 @@ const slideshowImages = document.querySelectorAll('.slideshow-slide img'); //Do 
 
 //Butons 
 const prevBtn = document.querySelector('#prevBtn'); 
-const nextBtn = document.querySelector('#nextBtn'); 
-``
+const nextBtn = document.querySelector('#nextBtn');  
+const favBtn = document.querySelector ('')
+
 //counter to let us know where we are 
 let counter = 1; 
 const size = slideshowImages[0].clientWidth;   //use this so we know how much to slide, returns original width  

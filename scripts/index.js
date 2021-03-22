@@ -43,8 +43,8 @@ const setupGuides = (data) => {
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4"> ${guide.title}<i class="material-icons right">close</i></span>
           <p>${guide.content}</p>
-        </div>
-        <a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div> 
+        <a class="btn-floating btn-medium waves-effect waves-light red" style="position:relative; right:-250px; top:125px;"><i class="material-icons">add</i></a>
       </div>
       `;
 
@@ -52,7 +52,6 @@ const setupGuides = (data) => {
     });
 
     html += '</div>' 
-
     guideList.innerHTML = html;
   } else {
     guideList.innerHTML = '<h6 class="center-align"> Login or Register to Continue </h6>';
